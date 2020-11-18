@@ -8,7 +8,16 @@ import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-firebase.initializeApp({});
+firebase.initializeApp({
+  apiKey: 'AIzaSyAhTEnBs17g5I79MkSPfmerQgKwUooTsas',
+  authDomain: 'chat-becdd.firebaseapp.com',
+  databaseURL: 'https://chat-becdd.firebaseio.com',
+  projectId: 'chat-becdd',
+  storageBucket: 'chat-becdd.appspot.com',
+  messagingSenderId: '889628958549',
+  appId: '1:889628958549:web:bd874870ebf133629c99dc',
+  measurementId: 'G-7XZRFGFCWS',
+});
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
