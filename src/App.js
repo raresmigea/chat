@@ -42,9 +42,9 @@ function SignIn() {
   return <button onClick={signInWithGoogle}>Sign in with Google</button>;
 }
 
-function SignOut() {
-  return auth.currentUser && <button onClick={() => auth.signOut}></button>;
-}
+// function SignOut() {
+//   return auth.currentUser && <button onClick={() => auth.signOut}></button>;
+// }
 
 function ChatRoom() {
   const dummy = useRef();
