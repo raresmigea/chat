@@ -27,7 +27,10 @@ function App() {
 
   return (
     <div className='App'>
-      <header></header>
+      <header>
+        <h1>⚛️🔥💬</h1>
+        <SignOut />
+      </header>
       <section> {user ? <ChatRoom /> : <SignIn />}</section>
     </div>
   );
@@ -42,9 +45,15 @@ function SignIn() {
   return <button onClick={signInWithGoogle}>Sign in with Google</button>;
 }
 
-// function SignOut() {
-//   return auth.currentUser && <button onClick={() => auth.signOut}></button>;
-// }
+function SignOut() {
+  return (
+    auth.currentUser && (
+      <button className='sign-out' onClick={() => auth.signOut()}>
+        Sign Out
+      </button>
+    )
+  );
+}
 
 function ChatRoom() {
   const dummy = useRef();
