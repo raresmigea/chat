@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ChatRoom(props) {
+function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
   const { auth } = props;
 
@@ -14,4 +14,4 @@ function ChatRoom(props) {
   );
 }
 
-export default ChatRoom;
+export default ChatMessage;
