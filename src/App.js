@@ -75,7 +75,6 @@ function ChatRoom() {
     });
 
     setFormValue('');
-
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   };
 
