@@ -23,14 +23,9 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 function App() {
-  const [user] = useAuthState(auth);
-
   return (
     <div className='App'>
-      <header>
-        <h1>Chat</h1>
-        <SignOut />
-      </header>
+      <header></header>
       <section> {user ? <ChatRoom /> : <SignIn />}</section>
     </div>
   );
@@ -46,13 +41,7 @@ function SignIn() {
 }
 
 function SignOut() {
-  return (
-    auth.currentUser && (
-      <button className='sign-out' onClick={() => auth.signOut()}>
-        Sign Out
-      </button>
-    )
-  );
+  return auth.currentUser && <button onClick={() => auth.signOut}></button>;
 }
 
 function ChatRoom() {
@@ -75,6 +64,7 @@ function ChatRoom() {
     });
 
     setFormValue('');
+
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -89,13 +79,9 @@ function ChatRoom() {
       <form onSubmit={sendMessage}>
         <input
           value={formValue}
-          onChange={(e) => setFormValue(e.target.value)}
-          placeholder='Write something...'
+          onChange={(e = setFormValue(e.target.value))}
         />
-
-        <button type='submit' disabled={!formValue}>
-          🕊️
-        </button>
+        <button type='submit'>send</button>
       </form>
     </>
   );
@@ -108,7 +94,7 @@ function ChatMessage(props) {
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL} alt='profile' />
+      <img src={photoURL} alt='no' />
       <p>{text}</p>
     </div>
   );
