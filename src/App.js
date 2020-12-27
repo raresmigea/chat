@@ -23,6 +23,8 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 function App() {
+  const [user] = useAuthState(auth);
+
   return (
     <div className='App'>
       <header></header>
@@ -79,9 +81,13 @@ function ChatRoom() {
       <form onSubmit={sendMessage}>
         <input
           value={formValue}
-          onChange={(e = setFormValue(e.target.value))}
+          onChange={(e) => setFormValue(e.target.value)}
+          placeholder='say something nice'
         />
-        <button type='submit'>send</button>
+
+        <button type='submit' disabled={!formValue}>
+          🕊️
+        </button>
       </form>
     </>
   );
