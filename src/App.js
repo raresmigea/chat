@@ -50,7 +50,7 @@ function SignIn() {
         Sign in with Google
       </button>
       <p>
-        Do not violate the community guidelines or you will be banned for life!
+        Do NOT violate the community guidelines or you will be banned for life!
       </p>
     </>
   );
